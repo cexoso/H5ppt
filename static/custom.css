@@ -2,21 +2,43 @@ html,body{
     height: 100%;
     overflow: hidden;
 }
-#displayBoard{
-    height:100%;
-    position: relative;
-    top: -0%;
-    transition: all 0.5s;
-    -webkit-transition:all 0.5s;
-}
-.tpl{
-    height: 100%;
-    display: block;
-}
 #page1{
     background:url('../resource/3k.jpg') no-repeat scroll 0 0;
     background-size:auto 100%;
-    
+}
+#page1 .animateF1{
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    animation: lr 3s linear 0s infinite alternate;
+    -webkit-animation: lr 3s linear 0s infinite alternate;
+    position: relative;
+}
+#page1 .animateF2{
+    width: 50px;
+    height: 50px;
+    background-color: red;
+}
+
+@keyframes lr{
+    0%{
+        left:0;
+        
+    }
+    100%{
+        left:300px;
+        
+    }
+}
+@-webkit-keyframes lr{
+    0%{
+        left:0;
+        
+    }
+    100%{
+        left:300px;
+        
+    }
 }
 #page2{
     background:url('../resource/cat.jpg') no-repeat scroll 0 0;

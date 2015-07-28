@@ -47,19 +47,16 @@
             if(current>1){
                 current--;
                 board.css({top:'-'+(current-1)*100+'%'});
-                console.log('-'+(current-1)*100+'%')
             }
         }
         function slideUpHandle(){
             if(current<pageLength){
                 current++;
                 board.css({top:'-'+(current-1)*100+'%'});
-                console.log('-'+(current-1)*100+'%')
             }
         }
         board.on('slideUp.sys',slideUpHandle)
         .on('slideDown.sys',slideDownHandle);
-
     })()
 
 
