@@ -11,4 +11,9 @@ $(function(){
     $('#displayBoard').on('slideDown.custom',function(){
         console.log('slideDown');
     })
+    $("#loading").hide();
+   
+    $('#page2 .banner').on('click',function(){
+        console.log($(this))
+    })
 })

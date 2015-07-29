@@ -1,9 +1,15 @@
 html,body{
     height: 100%;
     overflow: hidden;
+    
+}
+#loading{
+    background-color: red;
+    height:100%;
 }
 #page1{
     background:url('../resource/3k.jpg') no-repeat scroll 0 0;
+    background-color: rgba(255,0,0,0.5);
     background-size:auto 100%;
 }
 
@@ -12,45 +18,30 @@ html,body{
     margin: 0 auto;
     position: relative;
     opacity: 0;
-    -webkit-transition: all 3s;
-    -moz-transition: all 3s;
-    -ms-transition: all 3s;
-    -o-transition: all 3s;
-    transition: all 3s;
+    
 }
+
 #page1.currentPage .banner{
     opacity: 1;
+    -webkit-transition: all cubic-bezier(0.5, 0, 1, 0.5) 2s;
+    transition: all cubic-bezier(0.5, 0, 1, 0.5) 2s;
 }
 #page1 .banner .title{
     font-size: 56px;
     border-bottom:5px solid black;
-    animation: blink 1s linear .5s infinite alternate;
-    -webkit-animation: blink 1s linear .5s infinite alternate;
+    
+}
+#page1.currentPage .title{
+    animation: blink 5s linear 0s 1  forwards; 
+    /*-webkit-animation: blink 5s linear 0s 1 forwards; */
 }
 #page1 .banner .subTitle{
     color: blue;
     font-size: 20px;
     letter-spacing:7px;
-    animation: blink 1s linear 0s infinite alternate;
-    -webkit-animation: blink 1s linear 0s infinite alternate;
-}
-#page1 .animateF1{
-    width: 100px;
-    height: 100px;
-    line-height: 100px;
-    margin-left: -50px;
-    border-radius: 50%;
-    background-color: green;
-    /* animation: lr 50s linear 0s infinite alternate; */
-    /* -webkit-animation: lr 50s linear 0s infinite alternate; */
-    position: relative;
+    
 }
 
-#page1 .animateF2{
-    width: 50px;
-    height: 50px;
-    background-color: red;
-}
 
 @keyframes lr{
     0%{
@@ -78,7 +69,7 @@ html,body{
 
     }
     100%{
-        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ffdd1b, 0 0 70px #fff, 0 0 80px #fff, 0 0 100px #fff;
+        text-shadow: 0 0 12px #ffdd1b,0 0 20px #fff;
         color: white;
     }
 }
@@ -96,6 +87,26 @@ html,body{
 #page2{
     background:url('../resource/cat.jpg') no-repeat scroll 0 0;
     background-size:auto 100%;
+}
+
+#page2 .banner{
+    
+    text-align: center;
+    color: white;
+    
+}
+#page2.currentPage .banner{
+    animation: skew 2s linear 0.5s 1  forwards; 
+    transform:skew(230deg,40deg);    
+}
+
+@keyframes skew{
+    0%{
+        transform:skew(230deg,40deg);    
+    }
+    100%{
+        transform:skew(0deg);       
+    }
 }
 #page3{
     background:url('../resource/m.jpg') no-repeat scroll 0 0;

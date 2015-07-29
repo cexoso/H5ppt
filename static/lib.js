@@ -47,7 +47,7 @@
             if(current>1){
                 current--;
                 // 更新当前页class
-                $('section#page.currentPage').removeClass('currentPage');
+                $('section[id^=page].currentPage').removeClass('currentPage');
                 $('section#page'+current).addClass('currentPage');
                 board.css({top:'-'+(current-1)*100+'%'});
             }
@@ -56,7 +56,7 @@
             if(current<pageLength){
                 current++;
                 // 更新当前页class
-                $('section#page.currentPage').removeClass('currentPage');
+                $('section[id^=page].currentPage').removeClass('currentPage');
                 $('section#page'+current).addClass('currentPage');
                 board.css({top:'-'+(current-1)*100+'%'});
             }
@@ -72,5 +72,8 @@
 })();
 
 $(function(){
-    $('section#page1').addClass('currentPage');
+    setTimeout(function(){
+        //不用setTimeout chrome居然不支持首次currentPage动画
+        $('section#page1').addClass('currentPage');
+    },0);
 })
