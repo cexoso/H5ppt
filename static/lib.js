@@ -46,12 +46,18 @@
         function slideDownHandle(){
             if(current>1){
                 current--;
+                // 更新当前页class
+                $('section#page.currentPage').removeClass('currentPage');
+                $('section#page'+current).addClass('currentPage');
                 board.css({top:'-'+(current-1)*100+'%'});
             }
         }
         function slideUpHandle(){
             if(current<pageLength){
                 current++;
+                // 更新当前页class
+                $('section#page.currentPage').removeClass('currentPage');
+                $('section#page'+current).addClass('currentPage');
                 board.css({top:'-'+(current-1)*100+'%'});
             }
         }
@@ -64,3 +70,7 @@
     .on('touchmove',handle.touchmoveHandle).
     on('touchend',handle.touchendHandle);
 })();
+
+$(function(){
+    $('section#page1').addClass('currentPage');
+})

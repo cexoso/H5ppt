@@ -6,14 +6,46 @@ html,body{
     background:url('../resource/3k.jpg') no-repeat scroll 0 0;
     background-size:auto 100%;
 }
+
+#page1 .banner{
+    width: 8em;
+    margin: 0 auto;
+    position: relative;
+    opacity: 0;
+    -webkit-transition: all 3s;
+    -moz-transition: all 3s;
+    -ms-transition: all 3s;
+    -o-transition: all 3s;
+    transition: all 3s;
+}
+#page1.currentPage .banner{
+    opacity: 1;
+}
+#page1 .banner .title{
+    font-size: 56px;
+    border-bottom:5px solid black;
+    animation: blink 1s linear .5s infinite alternate;
+    -webkit-animation: blink 1s linear .5s infinite alternate;
+}
+#page1 .banner .subTitle{
+    color: blue;
+    font-size: 20px;
+    letter-spacing:7px;
+    animation: blink 1s linear 0s infinite alternate;
+    -webkit-animation: blink 1s linear 0s infinite alternate;
+}
 #page1 .animateF1{
     width: 100px;
     height: 100px;
+    line-height: 100px;
+    margin-left: -50px;
+    border-radius: 50%;
     background-color: green;
-    animation: lr 3s linear 0s infinite alternate;
-    -webkit-animation: lr 3s linear 0s infinite alternate;
+    /* animation: lr 50s linear 0s infinite alternate; */
+    /* -webkit-animation: lr 50s linear 0s infinite alternate; */
     position: relative;
 }
+
 #page1 .animateF2{
     width: 50px;
     height: 50px;
@@ -26,8 +58,28 @@ html,body{
         
     }
     100%{
-        left:300px;
+        left:100%;
         
+    }
+}
+@keyframes blink{
+    0%{
+        text-shadow: 0 0 10px #fff;
+
+    }
+    100%{
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ffdd1b, 0 0 70px #fff, 0 0 80px #fff, 0 0 100px #fff;
+        color: white;
+    }
+}
+@-webkit-keyframes blink{
+    0%{
+        text-shadow: 0 0 10px #fff;
+
+    }
+    100%{
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ffdd1b, 0 0 70px #fff, 0 0 80px #fff, 0 0 100px #fff;
+        color: white;
     }
 }
 @-webkit-keyframes lr{
@@ -36,10 +88,11 @@ html,body{
         
     }
     100%{
-        left:300px;
+        left:100%;
         
     }
 }
+
 #page2{
     background:url('../resource/cat.jpg') no-repeat scroll 0 0;
     background-size:auto 100%;

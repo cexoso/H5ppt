@@ -9,6 +9,10 @@
 
 body{
     cursor: default;
+    font-size: 14px;
+}
+section[id^=page]{
+    position: relative;
 }
 #displayBoard{
     height:100%;
@@ -20,4 +24,55 @@ body{
 .tpl{
     height: 100%;
     display: block;
+}
+.text-center{
+    text-align: center;
+}
+.text-justify{
+    text-align: justify;
+}
+div.arrowWrap{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+div.arrow{
+    /* border-top:5px solid white;
+    border-right:5px solid transparent;
+    border-bottom:5px solid transparent;
+    border-left:5px solid white;
+    border-top-left-radius: 12px;
+    width: 50px;
+    height: 50px;
+    margin:-25px auto 0;
+    transform: translate3d(0, 0, 0) rotate(45deg) skew(-10deg, -10deg);
+    -webkit-transform: translate3d(0, 0, 0) rotate(45deg) skew(-10deg, -10deg);
+    animation: arrow 2s linear 0s infinite normal;
+    -webkit-animation: arrow 2s linear 0s infinite normal; */
+    animation: arrow 2s linear 0s infinite normal;
+    -webkit-animation: arrow 2s linear 0s infinite normal;
+    background:url('../resource/arrow.png') no-repeat scroll 0 0;
+    background-size:50px;
+    width: 50px;
+    height: 50px;
+    margin:0 auto;
+    opacity: 0.5;
+}
+
+@-webkit-keyframes arrow{
+    0%{
+        -webkit-transform:translate3d(0,10px,0);        
+    }
+   100%{
+        -webkit-transform:translate3d(0,0,0);        
+    }
+}
+@keyframes arrow{
+    0%{
+        transform:translate3d(0,10px,0);
+    }
+   100%{
+        transform:translate3d(0,0,0);
+    }
 }
