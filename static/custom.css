@@ -112,3 +112,37 @@ html,body{
     background:url('../resource/m.jpg') no-repeat scroll 0 0;
     background-size:auto 100%;
 }
+
+#page3 img{
+   object-fit:cover;
+   height: 200px;
+   border-radius: 50%;
+   position: absolute;
+   top: 50%;    
+   left: 50%;
+   transform:translate(-50%,-50%);
+   visibility: hidden;
+}
+#page3.currentPage img{
+    animation: scale 2s linear 1s 1  both; 
+}
+@keyframes scale{
+    0%{
+        visibility: hidden;
+        transform:translate(-50%,-50%) scale(0);    
+    }
+    1%{
+        visibility: visible;
+        transform:translate(-50%,-50%) scale(0);    
+    }
+    70%{
+        transform:translate(-50%,-50%) scale(1.2);       
+    }
+    85%{
+        transform:translate(-50%,-50%) scale(0.9);       
+    }
+    100%{
+        transform:translate(-50%,-50%) scale(1);          
+        visibility: visible;
+    }
+}
